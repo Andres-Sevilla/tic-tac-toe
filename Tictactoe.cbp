@@ -29,9 +29,32 @@
 			</Target>
 		</Build>
 		<Compiler>
+			<Add option="-Wfatal-errors" />
+			<Add option="-Wextra" />
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
+			<Add option="-I/usr/lib/x86_64-linux-gnu/wx/include/gtk2-unicode-release-2.8" />
+			<Add option="-I/usr/include/wx-2.8" />
+			<Add option="-D_FILE_OFFSET_BITS=64" />
+			<Add option="-D_LARGE_FILES" />
+			<Add option="-D__WXGTK__" />
 		</Compiler>
+		<Linker>
+			<Add option="-L/usr/lib/x86_64-linux-gnu" />
+			<Add option="-pthread" />
+			<Add option="-Wl,-Bsymbolic-functions" />
+			<Add option="-Wl,-z,relro" />
+			<Add option="-L/usr/lib/x86_64-linux-gnu" />
+			<Add option="-lwx_gtk2u_richtext-2.8 -lwx_gtk2u_aui-2.8" />
+			<Add option="-lwx_gtk2u_xrc-2.8" />
+			<Add option="-lwx_gtk2u_qa-2.8" />
+			<Add option="-lwx_gtk2u_html-2.8" />
+			<Add option="-lwx_gtk2u_adv-2.8" />
+			<Add option="-lwx_gtk2u_core-2.8" />
+			<Add option="-lwx_baseu_xml-2.8" />
+			<Add option="-lwx_baseu_net-2.8" />
+			<Add option="-lwx_baseu-2.8" />
+		</Linker>
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
